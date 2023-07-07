@@ -17,6 +17,7 @@ const Hero = () => {
                     <span className={`text-4xl  md:text-4xl font-bold`}> here we help</span>
                     <span className={`text-7xl  md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500`}> donate food to the people in need.</span>
                     <div className="button my-8">
+                        
                         <Button content="Start Donating!" destination='/donate' />
                     </div>
                 </div>
