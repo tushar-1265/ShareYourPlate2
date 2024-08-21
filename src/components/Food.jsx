@@ -93,7 +93,7 @@ const Food = () => {
               const { name, $id, phoneNo, description, $updatedAt, address } =
                 item;
               const dateTime = convertStringToDateTime($updatedAt);
-              const truncatedDescription = description.length > 20 ? `${description.substring(0, 20)}...` : name;
+              const truncatedDescription = description.length > 20 ? `${description.substring(0, 20)}...` : description;
               return (
                 <div
                   key={$id}
@@ -125,7 +125,7 @@ const Food = () => {
                   </div>
                   <div title={`Description : ${description}`} className="codeDetails flex">
                     <p className="font-bold">Description :&nbsp;</p>
-                    <p className="">{truncatedDescription}</p>
+                    <p className="">{truncatedDescription.length==0?'Description not provided': truncatedDescription}</p>
                   </div>
                 </div>
               );

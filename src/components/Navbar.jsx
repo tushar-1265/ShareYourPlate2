@@ -26,7 +26,7 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="center lg:w-full hidden lg:block">
-                    <ul className='flex items-center justify-center space-x-6 text-xl'>
+                    <ul className='flex items-center justify-center space-x4 text-xl'>
                         <Link href='/'>
                             <li className={`hover:bg-[rgba(255,255,255,0.2)] ${router.pathname == '/' ? 'bg-[rgba(255,255,255,0.2)]' : ''}  p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>Home</li>
                         </Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
                             <li className={`hover:bg-[rgba(255,255,255,0.2)] ${router.pathname == '/donate' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>Donate</li>
                         </Link>
                         <Link href='/food'>
-                            <li className={`hover:bg-[rgba(255,255,255,0.2)] ${router.pathname == '/food' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>Food</li>
+                            <li className={`hover:bg-[rgba(255,255,255,0.2)] ${router.pathname == '/food' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>Contributions</li>
                         </Link>
                         <Link href='/contact'>
                             <li className={`hover:bg-[rgba(255,255,255,0.2)] ${router.pathname == '/contact' ? 'bg-[rgba(255,255,255,0.2)]' : ''} p-1 px-4 rounded-md transition-all duration-300 cursor-pointer`}>Contact Us</li>

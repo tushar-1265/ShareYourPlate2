@@ -16,18 +16,7 @@ const Donate = () => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
 
-    // const getFirstName = (fullName) => {
-    //     // split the full name string into an array of individual name parts
-    //     const nameParts = fullName.split(' ');
-    //     // return only the first name (the first item in the array)
-    //     return nameParts[0];
-    // }
-
-    // function isValidEmail(email) {
-    //     // regular expression pattern for email validation
-    //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    //     return emailPattern.test(email);
-    // }
+    
 
     useEffect(() => {
 
@@ -76,39 +65,9 @@ const Donate = () => {
         })
 
 
-        // e.preventDefault();
-        // setLoader(true);
-        // const response = await fetch(`https://clipsurf.onrender.com/${credentials.email}&${getFirstName(credentials.name)}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        // })
-        // setCredentials({ name: '', email: '' });
-        // const json = await response.json()
-        // if (json.status === 'success') {
-        //     showAlert('success', 'You have been added to the waitlist!')
-        // } else {
-        //     showAlert('failure', 'Something went wrong. Please try again.')
-        // }
-        // setLoader(false);
     }
 
-    // const managehandleSubmit = (e) => {
-    //     e.preventDefault();
-    //     if (credentials.name === '' || credentials.email === '') {
-    //         showAlert('failure', 'Please fill in all the fields.')
-    //     }
-    //     else if (credentials.name.length < 3) {
-    //         showAlert('failure', 'Please enter a valid name.')
-    //     }
-    //     else if (!isValidEmail(credentials.email)) {
-    //         showAlert('failure', 'Please enter a valid email address.')
-    //     }
-    //     else {
-    //         handleSubmit(e);
-    //     }
-    // }
+   
 
     return (
         <>
@@ -123,10 +82,7 @@ const Donate = () => {
                         required onChange={onChange} value={credentials.name} className='p-4 rounded-lg w-full outline-none bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)]' type="text" name="name" id="name" placeholder='Enter your name' />
                     <input
                         required onChange={onChange} value={credentials.address} className='p-4 rounded-lg w-full outline-none bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)]' type="text" name="address" id="address" placeholder='Enter your address' />
-                    {/* <input
-                        required onChange={onChange} value={credentials.name} className='p-4 rounded-lg w-full outline-none bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)]' type="text" name="name" id="name" placeholder='Enter the quantity of food' />
-                    <input
-                        required onChange={onChange} value={credentials.name} className='p-4 rounded-lg w-full outline-none bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)]' type="text" name="name" id="name" placeholder='Enter the type of food' /> */}
+                    {}
 
                     <input
                         required onChange={onChange} value={credentials.phoneNo} className='p-4 rounded-lg w-full outline-none bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)]' type="number" name="phoneNo" id="phoneNo" placeholder='Enter your mobile number' />
