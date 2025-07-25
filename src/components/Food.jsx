@@ -14,12 +14,12 @@ const Food = () => {
       const databases = new Databases(client);
 
       client
-        .setEndpoint("https://cloud.appwrite.io/v1") // Your API Endpoint
+        .setEndpoint("https://nyc.cloud.appwrite.io/v1") // Your API Endpoint
         .setProject("6883343000073c03a92e"); // Your project ID
 
       const result = await databases.listDocuments(
         "688335ec0015e51e0180",
-        "6883361e00187fccb3ec"
+        "68833649002e463c4408"
       );
 
       setDetails(result.documents);
