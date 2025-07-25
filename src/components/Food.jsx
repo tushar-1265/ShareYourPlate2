@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Client, Databases, ID } from "appwrite";
-import { useRouter } from 'next/router';
-import { useUser } from '@clerk/nextjs';
+import { useRouter } from "next/router";
+import { useUser } from "@clerk/nextjs";
 
 const Food = () => {
   const [details, setDetails] = useState([]);
@@ -22,8 +22,6 @@ const Food = () => {
         "6494221c03021acf5aff"
       );
 
-      
-      
       setDetails(result.documents);
     };
 
@@ -31,14 +29,10 @@ const Food = () => {
   }, []);
 
   useEffect(() => {
-
     if (isLoaded && !isSignedIn) {
-      router.push('/sign-in');
+      router.push("/sign-in");
     }
   }, [isSignedIn]);
-
-
-
 
   function convertStringToDateTime(dateTimeString) {
     const dateTime = new Date(dateTimeString);
@@ -89,50 +83,65 @@ const Food = () => {
         </h1>
         <div className="cards py-20 md:py-28 font-jost">
           <div className="wrapper text-white font-jost flex flex-wrap">
-            {details.length>0?details.map((item) => {
-              const { name, $id, phoneNo, description, $updatedAt, address } =
-                item;
-              const dateTime = convertStringToDateTime($updatedAt);
-              const truncatedDescription = description.length > 20 ? `${description.substring(0, 20)}...` : description;
-              return (
-                <div
-                  key={$id}
-                  className="semester bg-[rgba(255,255,255,0.2)] shadow-2xl shadow-black p-10 rounded-2xl mb-6 mx-2 lg:mx-5 flex flex-col justify-center"
-                >
-                  <div className="updateDetails text-xs flex my-1 ">
-                    <p className="font-bold">Updated At :&nbsp;</p>
-                    <span className="font-extralight">
-                      {dateTime.date} |&nbsp;
-                    </span>
-                    <span className="font-extralight">{dateTime.time}</span>
-                  </div>
-                  <div title={name} className="nameDetails flex w-full">
-                    <p className="font-bold">Name :&nbsp;</p>
-                    <p className="overflow-hidden whitespace-nowrap overflow-ellipsis">
-                      {name}
-                    </p>
-                  </div>
-                  <div title={address} className="codeDetails flex">
-                    <p className="font-bold">Address :&nbsp;</p>
-                    <p className="">{address}</p>
-                  </div>
+            {details.length > 0 ? (
+              details.map((item) => {
+                const { name, $id, phoneNo, description, $updatedAt, address } =
+                  item;
+                const dateTime = convertStringToDateTime($updatedAt);
+                const truncatedDescription =
+                  description.length > 20
+                    ? `${description.substring(0, 20)}...`
+                    : description;
+                return (
                   <div
-                    title={`PhoneNo ${phoneNo}`}
-                    className="codeDetails flex"
+                    key={$id}
+                    className="semester bg-[rgba(255,255,255,0.2)] shadow-2xl shadow-black p-10 rounded-2xl mb-6 mx-2 lg:mx-5 flex flex-col justify-center"
                   >
-                    <p className="font-bold">PhoneNo :&nbsp;</p>
-                    <p className="">{phoneNo}</p>
+                    <div className="updateDetails text-xs flex my-1 ">
+                      <p className="font-bold">Updated At :&nbsp;</p>
+                      <span className="font-extralight">
+                        {dateTime.date} |&nbsp;
+                      </span>
+                      <span className="font-extralight">{dateTime.time}</span>
+                    </div>
+                    <div title={name} className="nameDetails flex w-full">
+                      <p className="font-bold">Name :&nbsp;</p>
+                      <p className="overflow-hidden whitespace-nowrap overflow-ellipsis">
+                        {name}
+                      </p>
+                    </div>
+                    <div title={address} className="codeDetails flex">
+                      <p className="font-bold">Address :&nbsp;</p>
+                      <p className="">{address}</p>
+                    </div>
+                    <div
+                      title={`PhoneNo ${phoneNo}`}
+                      className="codeDetails flex"
+                    >
+                      <p className="font-bold">PhoneNo :&nbsp;</p>
+                      <p className="">{phoneNo}</p>
+                    </div>
+                    <div
+                      title={`Description : ${description}`}
+                      className="codeDetails flex"
+                    >
+                      <p className="font-bold">Description :&nbsp;</p>
+                      <p className="">
+                        {truncatedDescription.length == 0
+                          ? "Description not provided"
+                          : truncatedDescription}
+                      </p>
+                    </div>
                   </div>
-                  <div title={`Description : ${description}`} className="codeDetails flex">
-                    <p className="font-bold">Description :&nbsp;</p>
-                    <p className="">{truncatedDescription.length==0?'Description not provided': truncatedDescription}</p>
-                  </div>
-                </div>
-              );
-            }):
-            <div>
-              <h1 className="text-5xl font-jost font-extrabold text-white">No donations available!</h1>
-              </div>}
+                );
+              })
+            ) : (
+              <div>
+                <h1 className="text-5xl font-jost font-extrabold text-white">
+                  No donations available!
+                </h1>
+              </div>
+            )}
           </div>
         </div>
       </div>
