@@ -35,11 +35,11 @@ const Donate = () => {
     const databases = new Databases(client);
     client
       .setEndpoint("https://cloud.appwrite.io/v1") // Your API Endpoint
-      .setProject("6494219978ee1cfa896c"); // Your project ID
+      .setProject("6883343000073c03a92e"); // Your project ID
 
     const result = await databases.createDocument(
-      "649422087c73c9c82a50",
-      "6494221c03021acf5aff",
+      "688335ec0015e51e0180",
+      "68833649002e463c4408",
       ID.unique(),
       {
         name: credentials.name,
